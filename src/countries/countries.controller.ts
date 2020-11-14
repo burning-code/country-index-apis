@@ -6,7 +6,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { CountriesService } from './services/countries.service';
-import { Country } from './interfaces/country.interface';
+import { Country } from './models/country.model';
 
 @Controller('countries')
 export class CountriesController {
@@ -18,7 +18,7 @@ export class CountriesController {
   }
 
   @Get(':code')
-  async findByName(@Param('code') code): Promise<Country> {
+  async getCountry(@Param('code') code): Promise<Country> {
     return await this.countriesService.findByCode(code);
   }
 }

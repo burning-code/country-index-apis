@@ -20,10 +20,10 @@ export class AppController {
     return this.healthCheckService.check([
       () =>
         this.dnsHealthIndicator.pingCheck(
-          '/countries',
+          '/api/countries',
           `${this.configService.get<string>(
             'APP_URL',
-          )}/countries`,
+          )}/api/countries`,
         ),
     ]);
   }

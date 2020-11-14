@@ -40,6 +40,10 @@ describe('CountriesController (e2e)', () => {
     jest.resetAllMocks();
   });
 
+  afterAll(async () => {
+    await app.close();
+  });
+
   it('Return countries if API finds countries with search query', async () => {
     const result: AxiosResponse = {
       data,

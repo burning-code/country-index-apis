@@ -1,6 +1,6 @@
 import { HttpService, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Country } from '../interfaces/country.interface';
+import { Country } from '../models/country.model';
 
 @Injectable()
 export class CountriesApiService {

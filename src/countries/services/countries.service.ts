@@ -5,7 +5,7 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-import { Country } from '../interfaces/country.interface';
+import { Country } from '../models/country.model';
 import { CountriesApiService } from './countries.api.service';
 
 @Injectable()
