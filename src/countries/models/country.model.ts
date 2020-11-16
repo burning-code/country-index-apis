@@ -1,4 +1,4 @@
-import {Field, Float, Int, ObjectType} from '@nestjs/graphql';
+import { Field, Float, Int, ObjectType } from '@nestjs/graphql';
 import { Currency } from './currency.model';
 import { Language } from './language.model';
 
@@ -40,7 +40,7 @@ export class Country {
   @Field((type) => Int, { nullable: true })
   area?: number;
 
-  @Field((type) => Int, { nullable: true })
+  @Field((type) => Float, { nullable: true })
   gini?: number;
 
   @Field((type) => [String], { nullable: 'items' })

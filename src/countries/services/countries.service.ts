@@ -12,12 +12,13 @@ import { CountriesApiService } from './countries.api.service';
 export class CountriesService {
   constructor(private countriesApiService: CountriesApiService) {}
 
-  async search(keywords: string): Promise<Country[]> {
+  async search(keywords: string, limit = 0): Promise<Country[]> {
     if (!keywords) {
       return [];
     }
     try {
-      return await this.countriesApiService.search(keywords);
+      const countries = await this.countriesApiService.search(keywords);
+      return countries.slice(0, limit);
     } catch (e) {
       switch (e.response.status) {
         case HttpStatus.NOT_FOUND:
